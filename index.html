@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Percentage Calculator</title>
+  <link href="https://fonts.googleapis.com/css?family=Righteous&display=swap" rel="stylesheet">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+   <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  
+  
+  <div class="background">
+   
+    <div class="container">
+      
+      <div class="screen">
+        <div class="animated infinite pulse">
+         <h1>CLASS 1 TILL 7</h1>
+         </div>
+        <div class="screen-body">
+          
+          <div class="screen-body-item left">
+            <div class="app-title">
+             
+              <div class="animated infinite pulse">
+                Student <br> Grade <br> Calculator
+                <br>
+                <br>
+                Duaoen main yadd rkhye <br>Sir Raees ko!<br>
+              </div>
+            </div>
+          </div>
+          <div class="screen-body-item">
+              
+
+            <div class="app-form">
+              <div class="app-form-group">
+                <input type="text" class="app-form-control" placeholder="English" id="eng">
+              </div>
+              <div class="app-form-group">
+                <input  type="text"  class="app-form-control"   placeholder="Maths" id="maths">
+              </div>
+               <div class="app-form-group">
+                <input  type="text"  class="app-form-control"   placeholder="Science" id="sci">
+              </div>
+              <div class="app-form-group">
+                <input  type="text"  class="app-form-control"   placeholder="Social Studies" id="sst" >
+              </div>
+              <div class="app-form-group">
+                <input  type="text"  class="app-form-control"   placeholder="Urdu" id="ur" >
+              </div>
+              <div > 
+                <input type="button" name="" value="showPercentage" class="app-form-button" onclick="calcy()">
+              </div>            
+            </div>
+        </div>
+  
+      </div>
+        <div class="app-form-group showdata">
+                <p id="showData" >  </p>
+       </div>
+    </div>
+  </div>
+  
+  <script>
+    
+  const calcy = () =>{
+    let eng = document.getElementById('eng').value;
+    let maths = document.getElementById('maths').value;
+    let sci = document.getElementById('sci').value;
+    let sst = document.getElementById('sst').value;
+    let ur = document.getElementById('ur').value;
+    let grades = "";
+  
+  
+    let totalGrades = parseFloat(eng) + parseFloat(maths) + parseFloat(sci) + parseFloat(sst) + parseFloat(ur);
+    
+  
+    let perc = (totalGrades/450) * 100;
+
+    debugger;
+  
+    if(perc <= 100  && perc >= 80){
+      grades = 'A+.  HE/SHE has shown excellent ability to set goals and be persistent in achieving them.';
+    }else if(perc <= 79  && perc >= 70){
+       grades = 'A. HE/SHE listens attentively to directions and showing increasing independence to learn and study.';
+    }else if(perc <= 69  && perc >= 60){
+       grades = 'B. HE/SHE is progressing nicely and shows constant improvement.';   
+    }else if(perc <= 59  && perc >= 50){
+       grades = 'C. HE/SHE Needs to listen to directions more carefully';
+    }else if(perc <= 49  && perc >= 40){
+       grades = 'D. HE/SHEneeds to listen to directions more attentively during lessons.';
+    }else{
+       grades = 'F';
+    }
+  
+    if(perc >= 79){
+      document.getElementById('showData').innerHTML = ` Out of 450 your total is  ${totalGrades} and percentage is ${perc}%. <br>  <br>Grade is ${grades}.  <br>You are Pass. `
+    }
+    else if (perc <= 79  && perc >= 70){
+      document.getElementById('showData').innerHTML = ` Out of 450 your total is  ${totalGrades} and percentage is ${perc}%. <br>  <br>Grade is ${grades}. <br> You are Pass. `
+    }
+
+    else if(perc <= 69  && perc >= 60){
+      document.getElementById('showData').innerHTML = ` Out of 450 your total is  ${totalGrades} and percentage is ${perc}%. <br>  <br>Grade is ${grades}.  <br>You are Pass. `
+    }
+    else if(perc <= 59  && perc >= 50) {
+      document.getElementById('showData').innerHTML = ` Out of 450 your total is  ${totalGrades} and percentage is ${perc}%. <br> <br> Grade is ${grades}.  <br>You are Pass. `
+    }
+    
+    else if(perc <= 49  && perc >= 40) {
+      document.getElementById('showData').innerHTML = ` Out of 450 your total is  ${totalGrades} and percentage is ${perc}%. <br>  <br>Grade is ${grades}. <br> You are Pass. `
+    }
+  
+    
+  }
+  
+  
+  </script>
+  
+  
+  </body>
+  </html>
